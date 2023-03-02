@@ -1,5 +1,7 @@
 package studio5;
 
+import java.awt.Color;
+
 import edu.princeton.cs.introcs.StdDraw;
 
 public class Methods {
@@ -16,7 +18,9 @@ public class Methods {
 	public static double distanceBetween(double x1, double y1, double x2, double y2) {
 		double distance = 0;
 		// FIXME: Hint use Math methods (e.g. Math.sqrt) to compute the distance
-		
+		double x = x2-x1;
+		double y = y2-y1;
+		distance = Math.sqrt((x*x)+(y*y));
 		return distance;
 	}
 
@@ -35,16 +39,23 @@ public class Methods {
 		// Blue ring with 3.0/4.0 the radius
 		// suggested rgb values: 0, 109, 219
 
-		
+		Color blue = new Color(0, 109, 219);
+		StdDraw.setPenColor(blue);
+		StdDraw.filledCircle(x, y, radius*(3.0/4));
 
 		// Red ring with 1.0/2.0 the radius
 		// suggested rgb values: 146, 0, 0
 
-		
+		Color red = new Color(146, 0, 0);
+		StdDraw.setPenColor(red);
+		StdDraw.filledCircle(x, y, radius*(1.0/2));
 
 		// Yellow ring with 1.0/4.0 the radius
 		// suggested rgb values: 255, 255, 109
 
+		Color yellow = new Color(255, 255, 109);
+		StdDraw.setPenColor(yellow);
+		StdDraw.filledCircle(x, y, radius*(1.0/4.0));
 		
 	}
 
@@ -61,6 +72,20 @@ public class Methods {
 	 */
 	public static String substituteAll(String source, char target, String replacement) {
 		String result = "";
+		//char replace[] = replacement.toCharArray();
+		char array[] = source.toCharArray();
+		for (int i=0; i<array.length; i++)
+		{
+			if(array[i] == target) {
+				//array[i] = replace[];
+				result=result+replacement;
+			}
+			else if(array[i] != target) {
+				//array[i] = replace[];
+				result=result+array[i];
+			}
+		}
+		
 		// TODO: Finish this method
 		
 		return result;
@@ -75,7 +100,11 @@ public class Methods {
 	public static int arraySum(int[] values) {
 		int sum = 0;
 		// FIXME: Compute the sum of the values in an array
-		
+		//int arraySum[]= new int [values];
+		for(int i=0; i<arraySum.length; i++) {
+			sum = sum+arraySum[i];
+			
+		}
 		return sum;
 	}
 

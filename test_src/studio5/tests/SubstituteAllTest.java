@@ -19,7 +19,9 @@ public class SubstituteAllTest {
 
 		String actual = Methods.substituteAll(source, 'r', "rose");
 		assertEquals("rose is a rose is a rose is a rose.", actual);
+		
 	}
+	
 
 	@Test
 	public void test2Rounds() {
